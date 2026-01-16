@@ -5,6 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const button = document.getElementById('fetch-data-btn');
     const output = document.getElementById('output');
 
+    const savedHistory = JSON.parse(localStorage.getItem('seaches')) || [];
+
+    if (savedHistory.length > 0) {
+        const historyCard = createSearchCards(savedHistory);
+        renderToElement(output, historyCard);
+    }
+
     button.addEventListener('click', async () => handleSearch(input, output, 'Please enter a country name.'));
 
     input.addEventListener('keypress', async (event) => {

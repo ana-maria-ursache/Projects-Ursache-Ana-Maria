@@ -1,3 +1,5 @@
+import { addToFavorites } from './manageLocalStorage.js';
+
 export function createCountryCard(country) {
     const card = document.createElement('div');
     card.classList.add('country-card');
@@ -12,7 +14,29 @@ export function createCountryCard(country) {
         <p><strong>Area:</strong> ${country.area} km</p>
         <p><strong>Map:</strong> <a href="${country.maps.googleMaps}"> Google Maps</a></p>
 
+        <p class="add-to-fave-btn"><strong>Add to favorites</strong></p>
     `;
+
+    const faveBtn = card.querySelector('.add-to-fave-btn');
+    faveBtn.addEventListener('click', () => {
+        addToFavorites(country);
+    });
+
+    return card;
+}
+
+export function createSearchCards(country) {
+    const card = document.createElement('div');
+    card.classList.add('search-card');
+
+    const recent = countriesArray.slice(-5).reverse();
+    recent.forEach(c => {
+        const p = document.createElement('p');
+        p.innerHTML = `<strong>${c.name.common}</strong>`;
+        p.style.cursor = 'pointer';
+        card.appendChild(p);
+    });
+
     return card;
 }
 

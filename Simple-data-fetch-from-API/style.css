@@ -83,6 +83,17 @@ body {
     margin-bottom: 20px;
 }
 
+.add-to-fave-btn {
+    display: block;        
+    margin: 20px auto 0;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px dashed #76174b;
+    border-radius: 8px;
+    display: inline-block;
+}
+
 .error {
     color: red;
     font-weight: bold;

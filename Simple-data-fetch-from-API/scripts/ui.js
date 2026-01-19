@@ -1,5 +1,7 @@
 import { addToFavorites } from './manageLocalStorage.js';
 
+import { handleSearch } from './searchHandler.js';
+
 export function createCountryCard(country) {
     const card = document.createElement('div');
     card.classList.add('country-card');
@@ -25,15 +27,23 @@ export function createCountryCard(country) {
     return card;
 }
 
-export function createSearchCards(country) {
+export function createSearchCards(searches) {
     const card = document.createElement('div');
     card.classList.add('search-card');
 
-    const recent = countriesArray.slice(-5).reverse();
+    const searchesArray = Array.isArray(searches) ? searches : [searches];
+    const recent = searchesArray.slice(-5).reverse();
     recent.forEach(c => {
         const p = document.createElement('p');
-        p.innerHTML = `<strong>${c.name.common}</strong>`;
+        p.className = 'search-item';
+        p.innerHTML = `<strong>${c}</strong>`;  
         p.style.cursor = 'pointer';
+        p.addEventListener('click', async () => {
+            const input = document.getElementById('country-input');
+            const output = document.getElementById('output');
+            input.value = c;
+            await handleSearch(input, output);
+        });
         card.appendChild(p);
     });
 

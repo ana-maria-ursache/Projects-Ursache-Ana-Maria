@@ -5,6 +5,12 @@ export function saveSearchToLocalStorage(countryName) {
         searches.push(countryName);
         localStorage.setItem('searches', JSON.stringify(searches));
     }
+    else if (searches.includes(countryName)) {
+        const index = searches.indexOf(countryName);
+        searches.splice(index, 1);
+        searches.push(countryName);
+        localStorage.setItem('searches', JSON.stringify(searches));
+    }
 }
 
 export function addToFavorites(country) {

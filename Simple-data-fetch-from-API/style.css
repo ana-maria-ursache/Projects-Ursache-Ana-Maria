@@ -100,3 +100,33 @@ body {
     margin: 0;
     font-size: 12px;
 }
+
+
+#searches {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.search-card {
+    border-radius: 12px;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.search-item {
+    display: inline-block;
+    justify-content: center;
+    background: #fff0f6;
+    border: 1px solid #fce4ec;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 5px; 
+    font-size: 13px;
+    color: #e25aa4;
+    transition: 0.2s;
+}
+
+.search-item:hover {
+    background: #e25aa4;
+    color: white;
+}

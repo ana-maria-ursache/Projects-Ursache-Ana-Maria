@@ -13,8 +13,15 @@
 
     <main class="container">
         <nav class="tabs">
-            <button class="tab-button active" id="main-tab">Home</button>
-            <button class="tab-button" id="favorites-tab" style="display: none;">Favorites</button>
+            <div>
+                <button class="tab-button active" id="main-tab">Home</button>
+                <button class="tab-button" id="favorites-tab" style="display: none;">Favorites</button>
+            </div>
+            <div id="theme-switcher">
+                <button id="theme-toggle" class="theme-button">
+                    <img id="theme-icon" src="images/sun.png" alt="Theme Switcher">
+                </button>
+            </div>
         </nav>
 
         <section id="main-page" class="page active">
@@ -34,6 +41,7 @@
         <section id="favorites-page" class="page" style="display: none;">
             <article id="favorites"></article>
         </section>
+
     </main>
 </body>
 </html>

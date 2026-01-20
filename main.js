@@ -1,5 +1,6 @@
 import { handleSearch } from './scripts/searchHandler.js';
 import { createSearchCards, createFavoriteCards, renderToElement } from './scripts/ui.js';
+import { cycleTheme } from './scripts/themes.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('country-input');
@@ -54,4 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
             await handleSearch(input, output, 'Please enter a country name.');
         }
     });
+
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', cycleTheme);
+    }
+
 });
+

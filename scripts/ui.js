@@ -26,13 +26,13 @@ export function createCountryCard(country) {
 
     section.innerHTML = `
         <img src="${country.flags.svg}" alt="Flag" width="200">
-        <h2>${country.name.common}</h2>
-        <p><strong>Capital:</strong> ${country.capital ? country.capital[0] : 'N/A'}</p>
-        <p><strong>Region:</strong> ${country.region}</p>
-        <p><strong>Subregion:</strong> ${country.subregion}</p>
-        <p><strong>Population:</strong> ${country.population.toLocaleString()}</p>
-        <p><strong>Area:</strong> ${country.area} km</p>
-        <p><strong>Map:</strong> <a href="${country.maps.googleMaps}"> Google Maps</a></p>
+        <h2 class="title-text-card">${country.name.common}</h2>
+        <p class="text-card"><strong class="text-card">Capital:</strong> ${country.capital ? country.capital[0] : 'N/A'}</p>
+        <p class="text-card"><strong class="text-card">Region:</strong> ${country.region}</p>
+        <p class="text-card"><strong class="text-card">Subregion:</strong> ${country.subregion}</p>
+        <p class="text-card"><strong class="text-card">Population:</strong> ${country.population.toLocaleString()}</p>
+        <p class="text-card"><strong class="text-card">Area:</strong> ${country.area} km</p>
+        <p class="text-card"><strong class="text-card">Map:</strong> <a href="${country.maps.googleMaps}"> Google Maps</a></p>
     `;
 
     const isFav = isFavorited(country.name.common);
@@ -101,15 +101,15 @@ export async function createFavoriteCards(favorites) {
             article.className = 'favorite-item';
             article.innerHTML = `
                 <section class="favorite-item-content">
-                    <img src="${countryData.flags.svg}" alt="Flag" width="80">
-                    <h3>${countryData.name.common}</h3>
-                    <p><strong>Capital:</strong> ${countryData.capital ? countryData.capital[0] : 'N/A'}</p>
-                    <p><strong>Region:</strong> ${countryData.region}</p>
-                    <p><strong>Subregion:</strong> ${countryData.subregion}</p>
-                    <p><strong>Population:</strong> ${countryData.population.toLocaleString()}</p>
-                    <p><strong>Currency:</strong> ${countryData.currencies ? Object.values(countryData.currencies).map(c => c.name).join(', ') : 'N/A'}</p>
-                    <p><strong>Neighbors:</strong> ${countryData.borders ? countryData.borders.join(', ') : 'N/A'}</p>
-                    <p><strong>Timezone:</strong> ${countryData.timezones ? countryData.timezones.join(', ') : 'N/A'}</p>
+                    <img class="favorite-item-img" src="${countryData.flags.svg}" alt="Flag">
+                    <h3 class="title-text-card2">${countryData.name.common}</h3>
+                    <p class="text-card2"><strong class="text-card2">Capital:</strong> ${countryData.capital ? countryData.capital[0] : 'N/A'}</p>
+                    <p class="text-card2"><strong class="text-card2">Region:</strong> ${countryData.region}</p>
+                    <p class="text-card2"><strong class="text-card2">Subregion:</strong> ${countryData.subregion}</p>
+                    <p class="text-card2"><strong class="text-card2">Population:</strong> ${countryData.population.toLocaleString()}</p>
+                    <p class="text-card2"><strong class="text-card2">Currency:</strong> ${countryData.currencies ? Object.values(countryData.currencies).map(c => c.name).join(', ') : 'N/A'}</p>
+                    <p class="text-card2"><strong class="text-card2">Neighbors:</strong> ${countryData.borders ? countryData.borders.join(', ') : 'N/A'}</p>
+                    <p class="text-card2"><strong class="text-card2">Timezone:</strong> ${countryData.timezones ? countryData.timezones.join(', ') : 'N/A'}</p>
                 </section>
                 <button class="delete-fave-btn" data-country="${countryName}">★</button>
             `;

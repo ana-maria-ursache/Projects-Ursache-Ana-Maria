@@ -63,8 +63,8 @@ export function createCountryCard(country) {
 }
 
 export function createSearchCards(searches) {
-    const nav = document.createElement('nav');
-    nav.classList.add('search-card');
+    const element = document.createElement('div');
+    element.classList.add('search-card');
 
     const searchesArray = Array.isArray(searches) ? searches : [searches];
     const recent = searchesArray.slice(-5).reverse();
@@ -78,10 +78,10 @@ export function createSearchCards(searches) {
             input.value = c;
             await handleSearch(input, output);
         });
-        nav.appendChild(button);
+        element.appendChild(button);
     });
 
-    return nav;
+    return element;
 }
 
 export async function getMoreData(countryName) {

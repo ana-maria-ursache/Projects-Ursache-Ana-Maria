@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A simple webpage to fetch and display data from an API based on user input.">
     <title>Data for selected country</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <script src="main.js" type="module"></script>
 </head>
 <body>
@@ -23,6 +23,11 @@
     </nav>
 
     <div class="pages-container">
+        <aside class="container visited-sidebar" id="visited-page" style="display: none;">
+            <h2 class="visited-title">Favorites</h2>
+            <article id="visited"></article>
+        </aside>
+
         <main class="container main-content">
             <section id="main-page" class="page active">
                 <header>

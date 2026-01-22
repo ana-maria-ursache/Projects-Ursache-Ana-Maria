@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchesContainer = document.getElementById('searches');
     const favoritesContainer = document.getElementById('favorites');
 
-    const mainPage = document.getElementById('main-page');
     const favoritesPage = document.getElementById('favorites-page');
 
     const savedHistory = JSON.parse(localStorage.getItem('searches')) || [];

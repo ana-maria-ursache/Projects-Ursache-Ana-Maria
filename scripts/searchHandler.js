@@ -46,6 +46,8 @@ export async function handleSearch(input, output, message) {
         const historyCard = createSearchCards(updatedHistory);
         renderToElement(searchesContainer, historyCard);
         const resultsContainer = document.createElement('section');
+
+        resultsContainer.className = 'results-container';
         
         filtered.forEach(country => {
             const cardNode = createCountryCard(country);
